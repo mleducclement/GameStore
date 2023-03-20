@@ -1,10 +1,9 @@
-﻿using System.ComponentModel;
+﻿using Microsoft.EntityFrameworkCore;
+using System.ComponentModel;
 
 
-namespace GameStoreWeb.Models
-{
-    public class Product
-    {
+namespace GameStoreWeb.Models {
+    public class Product {
         public int Id { get; set; }
 
         [DisplayName("Title")]
@@ -14,6 +13,7 @@ namespace GameStoreWeb.Models
         public required string Description { get; set; }
 
         [DisplayName("Price")]
+        [Precision(10, 2)]
         public required decimal Price { get; set; }
 
         [DisplayName("Genre")]
