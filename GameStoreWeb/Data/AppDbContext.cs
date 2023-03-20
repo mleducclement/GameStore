@@ -3,11 +3,11 @@ using Microsoft.EntityFrameworkCore;
 
 namespace GameStoreWeb.Data {
     public class AppDbContext : DbContext {
-        DbSet<User> Users { get; set; }
-        DbSet<Genre> Genres { get; set; }
-        DbSet<Product> Products { get; set; }
-        DbSet<Order> Orders { get; set; }
-        DbSet<OrderProduct> OrderProducts { get; set; }
+        public DbSet<User> Users { get; set; }
+        public DbSet<Genre> Genres { get; set; }
+        public DbSet<Product> Products { get; set; }
+        public DbSet<Order> Orders { get; set; }
+        public DbSet<OrderProduct> OrderProducts { get; set; }
 
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) {
 
