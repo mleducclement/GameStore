@@ -1,9 +1,7 @@
 ﻿using System.ComponentModel;
 
-namespace GameStoreWeb.Models
-{
-    public class Order
-    {
+namespace GameStoreWeb.Models {
+    public class Order {
         public int Id { get; set; }
 
         //[DisplayName("Username")]
@@ -12,6 +10,6 @@ namespace GameStoreWeb.Models
         [DisplayName("Date Created")]
         public DateTime DateCreated { get; set; }
 
-        //public List<Product> Products { get; set; } = new List<Product>();
+        public ICollection<Product> Products { get; set; } = new List<Product>();
     }
 }
