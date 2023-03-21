@@ -17,7 +17,6 @@ namespace GameStoreWeb.Models {
         public required decimal Price { get; set; }
 
         [DisplayName("Genre")]
-        // -- Genre.cs --
         public required Genre Genre { get; set; }
     }
 }

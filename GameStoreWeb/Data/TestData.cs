@@ -1,19 +1,15 @@
-﻿using Microsoft.EntityFrameworkCore;
-using GameStoreWeb.Models;
-using static System.Net.Mime.MediaTypeNames;
+﻿using GameStoreWeb.Models;
 using Microsoft.CodeAnalysis.Elfie.Serialization;
+using Microsoft.EntityFrameworkCore;
 using System.Security.Policy;
+using static System.Net.Mime.MediaTypeNames;
 
-namespace GameStoreWeb.Data
-{
-    public class TestData
-    {
-        public async static Task Charger(AppDbContext AppDbContext)
-        {
+namespace GameStoreWeb.Data {
+    public class TestData {
+        public async static Task Load(AppDbContext AppDbContext) {
             await AppDbContext.Database.MigrateAsync();
 
-            if (await AppDbContext.Products.AnyAsync()) 
-            {
+            if (await AppDbContext.Products.AnyAsync()) {
                 return;
             }
 
@@ -126,7 +122,7 @@ namespace GameStoreWeb.Data
                 Genre = Role_Playing,
             };
 
-            await AppDbContext.Products.AddRangeAsync(new Product[] 
+            await AppDbContext.Products.AddRangeAsync(new Product[]
             { Conan_Exiles, Grand_Theft_Auto_V, Minecraft, Among_Us, Stardew_Valley, Resident_Evil_Village, Red_Dead_Redemption_2,
             Dark_Souls_III, Diablo_III, Cyberpunk_2077});
 
